@@ -6,11 +6,11 @@ O sistema permite que pais e responsáveis obtenham informações sobre notas e 
 
 # Testbed
 
-Python 2.7.5,
-PHP 5.4.16,
-issabel4-USB-DVD-x86_64-20200102.iso,
-VirtualBox-7.2.4-170995-Win.exe,
-
+- Python 2.7.5
+- PHP 5.4.16
+- [issabel4 ver. 20200102](https://sourceforge.net/projects/issabelpbx/files/Issabel%204/issabel4-USB-DVD-x86_64-20200102.iso/download)
+  - Versão não estavel [issabel5 ver. 20240430.iso](https://sourceforge.net/projects/issabelpbx/files/Issabel%205/issabel5-USB-DVD-x86_64-20240430.iso/download) 
+- VirtualBox-7.2.4-170995-Win.exe
 ### Andamento do projeto
 - [x] Apresentação e arpovação da proposta
 - [x] estudo sobre issabel e api do suap, e documentação do processo
