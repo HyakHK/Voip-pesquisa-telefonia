@@ -1,0 +1,77 @@
+Rezembrim de Paula Soares • 10 de out.
+Para 17/10: trazer proposta de metodologia com etapas a serem seguidas.
+
+Rezembrim de Paula Soares • 17 de out.
+Para 24/10: estudo sobre issabel e api do suap, documentando o processo
+Eu devo trazer o código de acesso do responsável dos alunos
+
+Rezembrim de Paula Soares • 24 de out.
+Kernel
+   Linux(x86_64)-3.10.0-1062.el7.x86_64
+
+ Issabel
+   issabel-4.0.0-1
+   issabel-addons-4.0.0-5
+   issabel-agenda-4.0.0-3
+   issabel-asterisk-sounds-1.2.3-2
+   issabel-callcenter-4.0.0-5
+   issabel-email_admin-4.0.0-2
+   issabel-endpointconfig2-4.0.0-3
+   issabel-extras-4.0.0-4
+   issabel-fax-4.0.0-3
+   issabel-firstboot-4.0.0-4
+   issabel-fixfonts-1.0.0-0
+   issabel-framework-4.0.0-9
+   issabel-framework-themes-extra-4.0.0-9
+   issabel-license-4.0.0-3
+   issabel-my_extension-4.0.0-1
+   issabel-packetbl-1.0-0
+   issabel-packet_capture-1.0.0-1
+   issabel-pbx-4.0.0-6
+   issabel-portknock-4.0.0-2
+   issabel-reports-4.0.0-3
+   issabel-security-4.0.0-7
+   issabel-system-4.0.0-8
+   issabel-theme_designer-1.0.0-0
+   issabel-two_factor_auth-1.0.0-0
+   issabel-upnpc-1.0.0-1
+   issabel-wizard-1.0.0-0
+
+ RoundCubeMail
+   RoundCubeMail-0.3.1-13
+
+ Mail
+   postfix-2.10.1-7.el7
+   cyrus-imapd-2.4.17-13.el7
+
+ IM
+   openfire-(not installed)-
+
+ IssablPBX
+   issabelPBX-2.11.0-48
+
+ Asterisk
+   asterisk11-11.25.3-5.el7
+   asterisk11-addons-11.25.3-5.el7
+   asterisk11-devel-11.25.3-5.el7
+   asterisk-codec-g729-1.0-0
+   asterisk-es-sounds-1.0.0-0.el7.centos
+   asterisk-fr-sounds-1.0.0-0.el7.centos
+   asterisk-perl-1.03-1.el7.centos
+   asterisk-pr-sounds-1.0-0
+   asterisk-pt_BR-sounds-1.0-0
+
+ FAX
+   hylafax-4.3.11-1rh7
+   iaxmodem-1.3.0-2.el7.centos
+
+ DRIVERS
+   dahdi-2.11.1-1.el7.centos
+   rhino-0.99.7-0
+   wanpipe-util-7.0.25.1-0
+
+Rezembrim de Paula Soares • 24 de out.
+Para 31/10: trazer informação de versão estável do issabel, iniciar testes com AGI e continuar documentando as etapas seguidas
+
+Rezembrim de Paula Soares • 31 de out.
+Para 7/11: trazer o issabel 4 funcionando com dois ramais se comunicando e documentar o processo
