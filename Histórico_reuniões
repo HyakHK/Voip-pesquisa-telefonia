@@ -1,0 +1,54 @@
+-------------------------------------------------------------------------
+
+Sábado 01/11/2025|
+
+William, Victor e Matheus
+
+instacação e testes iniciais do "issabel4-USB-DVD-x86_64-20200102.iso" "VirtualBox-7.2.4-170995-Win.exe"
+
+Criaçao de 2 ramais básicos de teste e ligaçao entre eles
+Obs: Foi desabilitado o "Fail2ban" temporariamente para rodar os testes.
+
+Considerações iniciais sobre o AGI, discutimos qual linguagem usar, já que as versões do python e php que vinheram na imagem são datadas.
+Python 2.7.5
+PHP 5.4.16
+
+*************************************************************************
+
+vim /etc/asterisk/extensions_custom.conf
+
+Adicionado ao contexto [from-internal-custom] ;Contexto para adicionar extensões e lógica customizada sem mexer no padrão
+
+include => teste-agi ; inclui o novo contexto customizado
+
+Criaçao do novo contexto ao final do arquivo.
+
+[teste-agi]
+exten => 10000,1,NoOp(inicio)
+ same => n,Answer()
+ same => n,AGI(/var/lib/asterisk/agi-bin/teste.agi) ; Testando o uso do AGI
+ same => n,NoOp(Fim do AGI: teste=${teste})
+ same => n,NoOp(fim)
+ same => n,Hangup()
+
+*************************************************************************
+
+vim /var/lib/asterisk/agi-bin/teste.agi
+
+#!/usr/bin/env python
+import sys
+
+sys.stdout.write('SET VARIABLE teste "teste AGI"\n')
+sys.stdout.flush()
+
+*************************************************************************
+
+Verificar algumas coisas para a proxima reunião,
+1 Aprender a mecher propriamente no issabel,
+2 Verificar o IVR, o quão util pode ser no lugar de utilizar o AGI
+3 Em caso de falha do passo anterior (configurar o agi, aprender como priorizar seu agi por cima do issabel 4)
+4 procurar um pacote de idiomas em portugues para o issabel 4
+5 Verificar a possibilidade da instalaçao do python 3.6, através  de repositório alternativo. Visto que o repositório oficial do centos7 já nao funciona mais.     
+6 Lembrar de reativar o fail2ban futuramente.
+
+-------------------------------------------------------------------------
