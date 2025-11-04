@@ -11,7 +11,7 @@ PHP 5.4.16,
 issabel4-USB-DVD-x86_64-20200102.iso,
 VirtualBox-7.2.4-170995-Win.exe,
 
-### Andameno do projeto
+### Andamento do projeto
 - [x] Apresentação e arpovação da proposta
 - [x] estudo sobre issabel e api do suap, e documentação do processo
 - [x] Testes com a versão Issabel 5 (Atualmente instavel para uso, problemas tendo enfase na comunicação com o asterisk)
