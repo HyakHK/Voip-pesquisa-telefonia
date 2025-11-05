@@ -6,8 +6,8 @@ William, Victor e Matheus
 
 instalação e testes iniciais do "issabel4-USB-DVD-x86_64-20200102.iso" "VirtualBox-7.2.4-170995-Win.exe"
 
-Criaçao de 2 ramais básicos de teste e ligaçao entre eles
-Obs: Foi desabilitado o "Fail2ban" temporariamente para rodar os testes.
+Criação de 2 ramais básicos de teste e ligação entre eles.
+Observação: Foi desabilitado o "Fail2ban" temporariamente para rodar os testes.
 
 Considerações iniciais sobre o AGI, discutimos qual linguagem usar, já que as versões do python e php que vinheram na imagem são datadas.
 Python 2.7.5
