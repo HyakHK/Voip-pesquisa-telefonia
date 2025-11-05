@@ -4,7 +4,7 @@ Sábado 01/11/2025|
 
 William, Victor e Matheus
 
-instacação e testes iniciais do "issabel4-USB-DVD-x86_64-20200102.iso" "VirtualBox-7.2.4-170995-Win.exe"
+instalação e testes iniciais do "issabel4-USB-DVD-x86_64-20200102.iso" "VirtualBox-7.2.4-170995-Win.exe"
 
 Criaçao de 2 ramais básicos de teste e ligaçao entre eles
 Obs: Foi desabilitado o "Fail2ban" temporariamente para rodar os testes.
