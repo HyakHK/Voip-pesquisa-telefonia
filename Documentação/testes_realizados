@@ -1,0 +1,9 @@
+#Testes Basicos
+
+
+- Pós-Instalação inicial do Issabel
+
+  - ![Imagem da tela cli do issabel](https://github.com/HyakHK/Voip-pesquisa-telefonia/blob/main/Documenta%C3%A7%C3%A3o/imagens/imagem_cli.png)
+
+- Teste de ligação entre dois ramais
+  - ![Imagem da tela web do issabel, com dois serviços comunicando entre si](https://github.com/HyakHK/Voip-pesquisa-telefonia/blob/main/Documenta%C3%A7%C3%A3o/imagens/Teste_ligar.png)
