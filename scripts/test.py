@@ -35,6 +35,7 @@ try:
         }
 
         conn_boletim= requests.get(url_boletim,headers= header, timeout=10)
+        #Para uso posterior, definição para status da requisição da url
         conn_boletim.raise_for_status()
 
         resposta_boletim= conn_boletim.json()
