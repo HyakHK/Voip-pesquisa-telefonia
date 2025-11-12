@@ -18,6 +18,7 @@ O sistema permite que pais e responsáveis obtenham informações sobre notas e 
 - [x] Downgrade para a versão estavel Issabel 4, com o inicio dos testes de ramais com AGI
 - [x] Scrip python basico, utilizando da API do Suap para requisição de informações
 - [ ] Realizar checagem de erro melhorada e definição de funções para o tratamento das informações
+- [ ] Atualizar Testbed
 - [ ] Documentar e revisar ao supervisor para os proximos passos
 
 
