@@ -16,4 +16,5 @@ O sistema permite que pais e responsáveis obtenham informações sobre notas e 
 - [x] estudo sobre issabel e api do suap, e documentação do processo
 - [x] Testes com a versão Issabel 5 (Atualmente instavel para uso, problemas tendo enfase na comunicação com o asterisk)
 - [x] Downgrade para a versão estavel Issabel 4, com o inicio dos testes de ramais com AGI
+- [x] Scrip python basico, utilizando da API do Suap para requisição de informações
 - [ ] Documentar e revisar ao supervisor para os proximos passos
