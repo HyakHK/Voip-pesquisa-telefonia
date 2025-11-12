@@ -1,0 +1,5 @@
+fazer a transferencia do venv para o asterisk 
+    - utilizar um bash que rodará o arquivo .py com o respectivo venv
+        - pip install -r requirements.txt
+
+organizar inputs para deixar a busca mais objetiva de acordo com as necessidades do usuario
