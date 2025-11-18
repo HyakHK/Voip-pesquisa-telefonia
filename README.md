@@ -30,7 +30,7 @@ OBS: É recomendado o uso de um /venv para isolar dependencias
 
 1.  Crie o ambiente virtual:
     ```bash
-    python3 -m venv venv_asterisk
+    python -m venv venv_asterisk
     ```
 2.  Ative o ambiente (necessário apenas para a instalação):
     ```bash
