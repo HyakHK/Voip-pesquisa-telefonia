@@ -23,12 +23,88 @@ O sistema permite que pais e responsáveis obtenham informações sobre notas e 
 - [ ] testar possivel uso de voz para acesso
 - [ ] Documentar e revisar ao supervisor para os proximos passos
 
+# Requisitos para atualizar o sistema e instalar pacotes
+1. Corrigir repositórios principais do CentOS 7 (Vault)
+
+Como o CentOS 7 foi descontinuado, os repositórios originais não funcionam mais.
+A solução é utilizar repositórios Vault.
+
+Projeto utilizado:
+https://github.com/cloudspinx/centos7-vault-repositories
+
+Passos
+cd /root
+git clone https://github.com/cloudspinx/centos7-vault-repositories.git
+cd centos7-vault-repositories
+./install.sh
+
+Isso irá atualizar os arquivos .repo em:
+
+/etc/yum.repos.d/
+
+E restaurar o funcionamento básico do yum.
+
+2. Restaurar repositórios oficiais do Issabel 4
+
+Alguns sistemas Issabel dependem do repositório oficial para instalar módulos adicionais.
+
+Criar ou editar o arquivo:
+/etc/yum.repos.d/Issabel.repo
+
+Substituir todo o conteúdo por:
+```
+[issabel-base]
+name=Base RPM Repository for Issabel 
+mirrorlist=http://mirror.issabel.org/?release=4&arch=$basearch&repo=base
+#baseurl=http://repo.issabel.org/issabel/4/base/$basearch/
+gpgcheck=1
+enabled=1
+gpgkey=http://repo.issabel.org/issabel/RPM-GPG-KEY-Issabel
+
+[issabel-updates]
+name=Updates RPM Repository for Issabel 
+mirrorlist=http://mirror.issabel.org/?release=4&arch=$basearch&repo=updates
+#baseurl=http://repo.issabel.org/issabel/4/updates/$basearch/
+gpgcheck=1
+enabled=1
+gpgkey=http://repo.issabel.org/issabel/RPM-GPG-KEY-Issabel
+
+[issabel-beta]
+name=Beta RPM Repository for Issabel 
+mirrorlist=http://mirror.issabel.org/?release=4&arch=$basearch&repo=beta
+#baseurl=http://repo.issabel.org/issabel/4/beta/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=http://repo.issabel.org/issabel/RPM-GPG-KEY-Issabel
+
+[issabel-extras]
+name=Extras RPM Repository for Issabel 
+mirrorlist=http://mirror.issabel.org/?release=4&arch=$basearch&repo=extras
+#baseurl=http://repo.issabel.org/issabel/4/extras/$basearch/
+gpgcheck=1
+enabled=1
+gpgkey=http://repo.issabel.org/issabel/RPM-GPG-KEY-Issabel
+```
+3. Limpar cache e reconstruir os metadados
+
+Após ajustar os arquivos:
+```bash
+yum clean all
+```
+```bash
+yum makecache
+```
+Conferir os repos disponíveis:
+```bash
+yum repolist
+```
 
 # Requisitos para o Script
 
 1.  Trocar os repositórios
     ```bash
     sudo sed -i 's|mirrorlist=|#mirrorlist=|g' /etc/yum.repos.d/CentOS-Base.repo
+    ```
     ```bash
     sudo sed -i 's|#baseurl=http://mirror.centos.org/centos/|baseurl=http://vault.centos.org/centos/|g' /etc/yum.repos.d/CentOS-Base.repo
     ```
