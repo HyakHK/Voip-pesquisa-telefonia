@@ -19,6 +19,8 @@ O sistema permite que pais e responsáveis obtenham informações sobre notas e 
 - [x] Scrip python basico, utilizando da API do Suap para requisição de informações
 - [ ] Realizar checagem de erro melhorada e definição de funções para o tratamento das informações
 - [ ] Atualizar Testbed
+- [ ] Testar APIs de texto para voz
+- [ ] testar possivel uso de voz para acesso
 - [ ] Documentar e revisar ao supervisor para os proximos passos
 
 
