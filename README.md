@@ -24,6 +24,19 @@ O sistema permite que pais e responsáveis obtenham informações sobre notas e 
 
 # Requisitos para o Script
 
+1.  Trocar os repositórios
+    ```bash
+    sudo sed -i 's|mirrorlist=|#mirrorlist=|g' /etc/yum.repos.d/CentOS-Base.repo
+    ```bash
+    sudo sed -i 's|#baseurl=http://mirror.centos.org/centos/|baseurl=http://vault.centos.org/centos/|g' /etc/yum.repos.d/CentOS-Base.repo
+    ```
+    ```bash
+    sudo yum clean all
+    ```
+    ```bash
+    sudo yum makecache
+    ```
+
 OBS: É recomendado o uso de um /venv para isolar dependencias
 
 **Passos na máquina alvo(linux):**
