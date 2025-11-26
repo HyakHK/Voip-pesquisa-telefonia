@@ -43,12 +43,31 @@ sys.stdout.flush()
 
 *************************************************************************
 
+11/11/2025
+
+Não houve reunião própriamente dita, Jéssica e Matheus trabalharam no código de 
+recebimento de dados e login do suap.
+
+*************************************************************************
+
+18/11/2025
+
+William, Matheus
+
+Adição dos repositórios "Vault" do "cent os 7" à VM, pois o suporte à distro foi encerrado.
+Adição de um novo repositório para os pacotes do "issabel 4"
+
+*************************************************************************
+25/11/2025
+
+William, Victor, Matheus e Jéssica
+
+Integração e teste dos códigos dentro da VM do issabel
+
+*************************************************************************
+
 Verificar algumas coisas para a proxima reunião,
-1 Aprender a mecher propriamente no issabel,
-2 Verificar o IVR, o quão util pode ser no lugar de utilizar o AGI
-3 Em caso de falha do passo anterior (configurar o agi, aprender como priorizar seu agi por cima do issabel 4)
-4 procurar um pacote de idiomas em portugues para o issabel 4
-5 Verificar a possibilidade da instalaçao do python 3.6, através  de repositório alternativo. Visto que o repositório oficial do centos7 já nao funciona mais.     
-6 Lembrar de reativar o fail2ban futuramente.
+1 Lembrar de reativar o fail2ban futuramente.
+2 Acordar com o professor a próxima entrega.
 
 -------------------------------------------------------------------------
