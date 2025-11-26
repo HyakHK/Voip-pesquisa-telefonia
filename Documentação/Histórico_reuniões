@@ -68,6 +68,8 @@ Integração e teste dos códigos dentro da VM do issabel
 
 Verificar algumas coisas para a proxima reunião,
 1 Lembrar de reativar o fail2ban futuramente.
-2 Acordar com o professor a próxima entrega.
+2 Testar o ultimo código passado por jéssica de reconhecimento de voz.
+2.5 Caso não consiga pegara voz por si só pegar pelo asterisk e passar para o código como arquivo de audio .wav
+3 Acordar com o professor a próxima entrega.
 
 -------------------------------------------------------------------------
