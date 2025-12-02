@@ -1,1 +1,9 @@
 /scripts/.env
+.venv
+.gitignore
+
+app.log
+src/test.py
+src/__pycache__/log.cpython-36.pyc
+src/main.py
+.gitignore
