@@ -26,7 +26,7 @@ class SuapClient:
             raise Exception("falha ao obter token:", e)
     
     def get_boletim(self):
-        if not self.__check_con():
+        if not self._check_con():
             raise Exception("Erro: sem conexão com suap.")
         
         token = self.get_student_token()
@@ -38,7 +38,7 @@ class SuapClient:
 
         return r.json()
     
-    def __check_con(self):
+    def _check_con(self):
         try:
             r = requests.get(self.url, timeout=10, stream=True)
             r.raise_for_status()
