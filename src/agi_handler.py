@@ -16,7 +16,7 @@ def handler():
         agi.verbose("Inicio.")
         agi.answer()
         
-        agi.verbose("A obter matr�cula e c�digo de acesso...")
+        agi.verbose("A obter matr�cula e código de acesso...")
         try:
             enrolment, access_code = agi_handler.ask_enrolment_and_access_code()
             agi.verbose(f"Matr�cula: {enrolment}, C�digo de acesso: {access_code}")
