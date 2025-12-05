@@ -1,46 +1,51 @@
-#!/usr/bin/env python3
-
-from asterisk.agi import *
-from suap_client import *
-from utils import *
-from agi_handler import AgiHandler
-from text_to_speech import text_to_speech
-
-# Incompleto
-
-def handler():
-   try:
-        agi = AGI()
-        agi_handler = AgiHandler(agi)
-        
-        agi.verbose("Inicio.")
-        agi.answer()
-        
-        agi.verbose("A obter matrícula e código de acesso...")
-        try:
-            enrolment, access_code = agi_handler.ask_enrolment_and_access_code()
-            agi.verbose(f"Matrícula: {enrolment}, Código de acesso: {access_code}")
-
-        except Exception as e:
-            agi.verbose(f"Erro: {e}")
-
-        suap = SuapClient(
-            enrolment= enrolment, 
-            responsible_code = access_code
-        ) 
-        
-        boletim = suap.get_boletim()
-        text_boletim = format_boletim(boletim)
-        audio_wav = text_to_speech(text_boletim)
-        audio_gsm = wav_to_gsm(audio_wav)
-
-        agi.stream_file(audio_gsm.split(".gsm")[0])
-
-        
-        agi.hangup()
+class AgiHandler:
+    def __init__(self, agi: object):
+        self.agi = agi
+        self.default_timeout = 60000 * 2
     
-   except Exception as e:
-        agi.verbose(f"Erro: {e}")
+    def ask_enrolment_and_access_code(self):
+        enrolment = self.agi.get_data("beep", timeout=20000, max_digits=100)
+        access_code = ""
+        
+        for _ in range(5):
+            selection_digit = ""     
+            while selection_digit not in ["1", "2"]:
+                self.agi.verbose("número ou letra, aguardando escolha do usuário...")
+                selection_digit = self.agi.wait_for_digit(timeout=self.default_timeout)
 
-if __name__ == "__main__":
-    handler()
+            char = self._process_responsible_code_entry(selection_digit)
+            access_code += char
+
+        return enrolment, access_code.lower()
+    
+    def _process_responsible_code_entry(self, selection_digit):
+        if selection_digit == "1":
+            self.agi.verbose("selecionado: número.")
+            self.agi.verbose("aguardando entrada...")
+                
+            char = self.agi.wait_for_digit(timeout=self.default_timeout)
+            self.agi.verbose(f"Num: {char} ")     
+
+        elif selection_digit == "2":
+            self.agi.verbose("selecionado: caractere.")
+            self.agi.verbose("aguardando entrada...")
+                
+            char = self._decode_t9( self.agi.get_data(filename="beep", timeout=self.default_timeout, max_digits=5) )
+            self.agi.verbose(f"Char: {char}")
+        
+        return char
+
+
+    def _decode_t9(self, seq):
+        mapping = {
+            "2": "A",  "22": "B",  "222": "C",
+            "3": "D",  "33": "E",  "333": "F",
+            "4": "G",  "44": "H",  "444": "I",
+            "5": "J",  "55": "K",  "555": "L",
+            "6": "M",  "66": "N",  "666": "O",
+            "7": "P",  "77": "Q",  "777": "R",  "7777": "S",
+            "8": "T",  "88": "U",  "888": "V",
+            "9": "W",  "99": "X",  "999": "Y",  "9999": "Z",
+        }
+
+        return mapping.get(seq, "?")
