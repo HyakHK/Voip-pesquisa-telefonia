@@ -35,7 +35,6 @@ def handler():
 
         agi.stream_file(audio_gsm.split(".gsm")[0])
 
-        agi.send_command
         agi.hangup()
     
    except Exception as e:
