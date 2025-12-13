@@ -12,9 +12,10 @@ class SuapClient:
         self.get_boletim_endpoint = '/api/ensino/meu-boletim/2025/1/?page=1'
        
     def get_student_token(self):
+        url = self.url + self.responsible_authentication_endpoint      
         try:
             r = requests.post(
-                url= self.url + self.responsible_authentication_endpoint,
+                url= url,
                 headers= {'accept': 'application/json'},
                 params= self.credentials
         
@@ -30,9 +31,10 @@ class SuapClient:
             raise Exception("Erro: sem conexão com suap.")
         
         token = self.get_student_token()
+        url = self.url + self.get_boletim_endpoint
         
         r = requests.get(
-            url= self.url + self.get_boletim_endpoint,
+            url= url,
             headers= {'Authorization': f'Bearer {token}'}
         )           
 
