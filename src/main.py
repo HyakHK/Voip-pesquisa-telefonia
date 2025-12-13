@@ -15,6 +15,8 @@ def handler():
         
         agi.verbose("Inicio.")
         agi.answer()
+
+        agi_handler.home_menu()
         
         agi.verbose("A obter matrícula e código de acesso...")
        
@@ -22,8 +24,8 @@ def handler():
         agi.verbose(f"Matrícula: {enrolment}, Código de acesso: {access_code}")
 
         suap = SuapClient(
-            enrolment= enrolment, 
-            responsible_code = access_code
+          enrolment=enrolment, 
+          responsible_code= access_code
         ) 
         
         boletim = suap.get_boletim()
@@ -33,7 +35,7 @@ def handler():
 
         agi.stream_file(audio_gsm.split(".gsm")[0])
 
-        
+        agi.send_command
         agi.hangup()
     
    except Exception as e:
