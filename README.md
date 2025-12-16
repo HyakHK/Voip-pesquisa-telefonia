@@ -11,15 +11,16 @@ O sistema permite que pais e responsáveis obtenham informações sobre notas e 
 - [issabel4 ver. 20200102](https://sourceforge.net/projects/issabelpbx/files/Issabel%204/issabel4-USB-DVD-x86_64-20200102.iso/download)
   - Versão não estavel [issabel5 ver. 20240430.iso](https://sourceforge.net/projects/issabelpbx/files/Issabel%205/issabel5-USB-DVD-x86_64-20240430.iso/download) 
 - VirtualBox-7.2.4-170995-Win.exe
+- Filezilla(ou qualquer FTP)
 ### Andamento do projeto
 - [x] Apresentação e arpovação da proposta
 - [x] estudo sobre issabel e api do suap, e documentação do processo
 - [x] Testes com a versão Issabel 5 (Atualmente instavel para uso, problemas tendo enfase na comunicação com o asterisk)
 - [x] Downgrade para a versão estavel Issabel 4, com o inicio dos testes de ramais com AGI
 - [x] Scrip python basico, utilizando da API do Suap para requisição de informações
-- [ ] Realizar checagem de erro melhorada e definição de funções para o tratamento das informações
+- [x] Realizar checagem de erro melhorada e definição de funções para o tratamento das informações
 - [ ] Atualizar Testbed
-- [ ] Testar APIs de texto para voz
+- [x] Testar APIs de texto para voz
 - [ ] testar possivel uso de voz para acesso
 - [ ] Documentar e revisar ao supervisor para os proximos passos
 
@@ -33,16 +34,14 @@ Projeto utilizado:
 https://github.com/cloudspinx/centos7-vault-repositories
 
 Passos
+```bash
 cd /root
 git clone https://github.com/cloudspinx/centos7-vault-repositories.git
 cd centos7-vault-repositories
 ./install.sh
+```
+Isso irá atualizar os arquivos .repo em /etc/yum.repos.d/ e restaurar o funcionamento básico do yum
 
-Isso irá atualizar os arquivos .repo em:
-
-/etc/yum.repos.d/
-
-E restaurar o funcionamento básico do yum.
 
 2. Restaurar repositórios oficiais do Issabel 4
 
@@ -90,8 +89,6 @@ gpgkey=http://repo.issabel.org/issabel/RPM-GPG-KEY-Issabel
 Após ajustar os arquivos:
 ```bash
 yum clean all
-```
-```bash
 yum makecache
 ```
 Conferir os repos disponíveis:
@@ -104,14 +101,8 @@ yum repolist
 1.  Trocar os repositórios
     ```bash
     sudo sed -i 's|mirrorlist=|#mirrorlist=|g' /etc/yum.repos.d/CentOS-Base.repo
-    ```
-    ```bash
     sudo sed -i 's|#baseurl=http://mirror.centos.org/centos/|baseurl=http://vault.centos.org/centos/|g' /etc/yum.repos.d/CentOS-Base.repo
-    ```
-    ```bash
     sudo yum clean all
-    ```
-    ```bash
     sudo yum makecache
     ```
 
