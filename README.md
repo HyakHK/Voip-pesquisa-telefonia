@@ -1,4 +1,4 @@
-# Sistema de Atendimento Telefônico Automático – Issabel 4 + SUAP
+# Sistema de Atendimento Telefônico Automático – Issabel 4 + SUAP API
 
 Este projeto consiste em um sistema de atendimento telefônico automatizado desenvolvido na plataforma Issabel 4, integrado à API do SUAP (IFRN).  
 
